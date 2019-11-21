@@ -5,6 +5,12 @@ Class {
 }
 
 { #category : #tests }
+MoneyTest >> testEquality [
+	self assert: (Dollar amount: 5) equals: (Dollar amount: 5).
+	self deny: (Dollar amount: 5) equals: (Dollar amount: 6)
+]
+
+{ #category : #tests }
 MoneyTest >> testMultiplication [
 	| five product |
 	five := Dollar amount: 5.

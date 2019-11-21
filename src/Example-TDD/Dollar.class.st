@@ -12,6 +12,11 @@ Dollar class >> amount: anInteger [
 	^ self new setAmount: anInteger
 ]
 
+{ #category : #comparing }
+Dollar >> = anObject [
+	^ amount = anObject amount
+]
+
 { #category : #accessing }
 Dollar >> amount [
 	^ amount
