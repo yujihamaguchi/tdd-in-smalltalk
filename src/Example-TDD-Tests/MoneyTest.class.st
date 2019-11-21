@@ -5,6 +5,13 @@ Class {
 }
 
 { #category : #tests }
-MoneyTest >> testExample [
-	self assert: true equals: false
+MoneyTest >> testMultiplication [
+	| five |
+	five := Dollar amount: 5.
+	self
+		assert:
+			(five
+				times: 2;
+				amount)
+		equals: 10
 ]
