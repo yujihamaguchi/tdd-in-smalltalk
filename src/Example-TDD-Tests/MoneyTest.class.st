@@ -12,10 +12,8 @@ MoneyTest >> testEquality [
 
 { #category : #tests }
 MoneyTest >> testMultiplication [
-	| five product |
+	| five |
 	five := Dollar amount: 5.
-	product := five times: 2.
-	self assert: product amount equals: 10.
-	product := five times: 3.
-	self assert: product amount equals: 15
+	self assert: (five times: 2) equals: (Dollar amount: 10).
+	self assert: (five times: 3) equals: (Dollar amount: 15)
 ]

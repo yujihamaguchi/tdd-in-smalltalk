@@ -17,7 +17,7 @@ Dollar >> = anObject [
 	^ amount = anObject amount
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 Dollar >> amount [
 	^ amount
 ]
