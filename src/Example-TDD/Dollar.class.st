@@ -22,12 +22,12 @@ Dollar >> amount [
 	^ amount
 ]
 
-{ #category : #initialization }
+{ #category : #private }
 Dollar >> setAmount: anObject [
 	amount := anObject
 ]
 
-{ #category : #calculating }
+{ #category : #arithmetic }
 Dollar >> times: aMultiplier [
 	^ self class amount: amount * aMultiplier
 ]
