@@ -6,12 +6,10 @@ Class {
 
 { #category : #tests }
 MoneyTest >> testMultiplication [
-	| five |
+	| five product |
 	five := Dollar amount: 5.
-	self
-		assert:
-			(five
-				times: 2;
-				amount)
-		equals: 10
+	product := five times: 2.
+	self assert: product amount equals: 10.
+	product := five times: 3.
+	self assert: product amount equals: 15
 ]

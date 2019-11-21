@@ -24,5 +24,5 @@ Dollar >> setAmount: anObject [
 
 { #category : #calculating }
 Dollar >> times: aMultiplier [
-	amount := amount * aMultiplier
+	^ self class amount: amount * aMultiplier
 ]
