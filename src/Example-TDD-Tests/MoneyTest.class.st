@@ -24,3 +24,13 @@ MoneyTest >> testMultiplication [
 	self assert: (five times: 2) equals: (Money dollar: 10).
 	self assert: (five times: 3) equals: (Money dollar: 15)
 ]
+
+{ #category : #tests }
+MoneyTest >> testSimpleAddtion [
+	| five sum bank reduced |
+	five := Money dollar: 5.
+	sum := five plus: five.
+	bank := Bank new.
+	reduced := bank reduce: sum currency: 'USD'.
+	self assert: reduced equals: (Money dollar: 10)
+]

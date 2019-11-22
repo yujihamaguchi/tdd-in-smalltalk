@@ -38,6 +38,11 @@ Money >> currency [
 	^ currency
 ]
 
+{ #category : #arithmetic }
+Money >> plus: aMoney [
+	^ Money amount: amount + aMoney amount currency: currency
+]
+
 { #category : #printing }
 Money >> printString [ 
 	^ amount asString , ' ', currency
