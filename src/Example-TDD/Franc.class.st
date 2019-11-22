@@ -1,20 +1,12 @@
 Class {
 	#name : #Franc,
-	#superclass : #Object,
-	#instVars : [
-		'amount'
-	],
+	#superclass : #Money,
 	#category : #'Example-TDD'
 }
 
 { #category : #initialization }
 Franc class >> amount: anInteger [
 	^ self new setAmount: anInteger
-]
-
-{ #category : #comparing }
-Franc >> = anObject [
-	^ amount = anObject amount
 ]
 
 { #category : #private }

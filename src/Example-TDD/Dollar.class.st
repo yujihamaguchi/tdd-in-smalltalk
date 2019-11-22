@@ -1,6 +1,6 @@
 Class {
 	#name : #Dollar,
-	#superclass : #Object,
+	#superclass : #Money,
 	#instVars : [
 		'amount'
 	],
@@ -10,11 +10,6 @@ Class {
 { #category : #initialization }
 Dollar class >> amount: anInteger [
 	^ self new setAmount: anInteger
-]
-
-{ #category : #comparing }
-Dollar >> = anObject [
-	^ amount = anObject amount
 ]
 
 { #category : #private }

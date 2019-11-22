@@ -7,7 +7,9 @@ Class {
 { #category : #tests }
 MoneyTest >> testEquality [
 	self assert: (Dollar amount: 5) equals: (Dollar amount: 5).
-	self deny: (Dollar amount: 5) equals: (Dollar amount: 6)
+	self deny: (Dollar amount: 5) equals: (Dollar amount: 6).
+	self assert: (Franc amount: 5) equals: (Franc amount: 5).
+	self deny: (Franc amount: 5) equals: (Franc amount: 6)
 ]
 
 { #category : #tests }
