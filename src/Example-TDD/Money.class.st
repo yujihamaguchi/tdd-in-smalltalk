@@ -9,5 +9,5 @@ Class {
 
 { #category : #comparing }
 Money >> = anObject [
-	^ amount = anObject amount
+	^ amount = anObject amount & (self class = anObject class)
 ]
