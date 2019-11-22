@@ -15,12 +15,12 @@ Money class >> amount: anInteger currency: aString [
 
 { #category : #initialization }
 Money class >> dollar: anInteger [
-	^ Dollar amount: anInteger currency: 'USD'
+	^ Money amount: anInteger currency: 'USD'
 ]
 
 { #category : #initialization }
 Money class >> franc: anInteger [
-	^ Franc amount: anInteger currency: 'CHF'
+	^ Money amount: anInteger currency: 'CHF'
 ]
 
 { #category : #comparing }
