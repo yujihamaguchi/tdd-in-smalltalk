@@ -11,6 +11,14 @@ MoneyTest >> testEquality [
 ]
 
 { #category : #tests }
+MoneyTest >> testFrancMultiplication [
+	| five |
+	five := Franc amount: 5.
+	self assert: (five times: 2) equals: (Franc amount: 10).
+	self assert: (five times: 3) equals: (Franc amount: 15)
+]
+
+{ #category : #tests }
 MoneyTest >> testMultiplication [
 	| five |
 	five := Dollar amount: 5.
