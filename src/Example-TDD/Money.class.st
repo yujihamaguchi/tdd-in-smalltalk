@@ -25,10 +25,31 @@ Money class >> franc: anInteger [
 
 { #category : #comparing }
 Money >> = anObject [
-	^ amount = anObject amount & (self class = anObject class)
+	^ amount = anObject amount & (currency = anObject currency)
+]
+
+{ #category : #private }
+Money >> amount [
+	^ amount
 ]
 
 { #category : #acccessing }
 Money >> currency [
 	^ currency
+]
+
+{ #category : #printing }
+Money >> printString [ 
+	^ amount asString , ' ', currency
+]
+
+{ #category : #private }
+Money >> setAmount: anObject currency: aString [
+	amount := anObject.
+	currency := aString
+]
+
+{ #category : #arithmetic }
+Money >> times: aMultiplier [
+	^ Money amount: amount * aMultiplier currency: currency
 ]

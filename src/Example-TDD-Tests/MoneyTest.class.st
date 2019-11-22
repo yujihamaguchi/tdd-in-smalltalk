@@ -11,6 +11,11 @@ MoneyTest >> testCurrency [
 ]
 
 { #category : #tests }
+MoneyTest >> testDifferentClassEquality [
+	self assert: (Money amount: 10 currency: 'CHF') equals: (Franc amount: 10 currency: 'CHF') 
+]
+
+{ #category : #tests }
 MoneyTest >> testEquality [
 	self assert: (Money dollar: 5) equals: (Money dollar: 5).
 	self deny: (Money dollar: 5) equals: (Money dollar: 6).
