@@ -9,12 +9,12 @@ Class {
 
 { #category : #initialization }
 Money class >> dollar: anInteger [
-	^Dollar amount: anInteger 
+	^ Dollar amount: anInteger
 ]
 
 { #category : #initialization }
 Money class >> franc: anInteger [
-	^Franc amount: anInteger.
+	^ Franc amount: anInteger
 ]
 
 { #category : #comparing }

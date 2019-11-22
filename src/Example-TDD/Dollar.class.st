@@ -1,9 +1,6 @@
 Class {
 	#name : #Dollar,
 	#superclass : #Money,
-	#instVars : [
-		'amount'
-	],
 	#category : #'Example-TDD'
 }
 
