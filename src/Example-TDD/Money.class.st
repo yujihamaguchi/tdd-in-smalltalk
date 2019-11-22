@@ -2,22 +2,33 @@ Class {
 	#name : #Money,
 	#superclass : #Object,
 	#instVars : [
-		'amount'
+		'amount',
+		'currency'
 	],
 	#category : #'Example-TDD'
 }
 
 { #category : #initialization }
+Money class >> amount: anInteger currency: aString [
+	^ self new setAmount: anInteger currency: aString
+]
+
+{ #category : #initialization }
 Money class >> dollar: anInteger [
-	^ Dollar amount: anInteger
+	^ Dollar amount: anInteger currency: 'USD'
 ]
 
 { #category : #initialization }
 Money class >> franc: anInteger [
-	^ Franc amount: anInteger
+	^ Franc amount: anInteger currency: 'CHF'
 ]
 
 { #category : #comparing }
 Money >> = anObject [
 	^ amount = anObject amount & (self class = anObject class)
+]
+
+{ #category : #acccessing }
+Money >> currency [
+	^ currency
 ]

@@ -5,8 +5,8 @@ Class {
 }
 
 { #category : #initialization }
-Franc class >> amount: anInteger [
-	^ self new setAmount: anInteger
+Franc class >> amount: anInteger currency: aString [
+	^ super amount: anInteger currency: aString
 ]
 
 { #category : #private }
@@ -15,11 +15,12 @@ Franc >> amount [
 ]
 
 { #category : #private }
-Franc >> setAmount: anObject [
-	amount := anObject
+Franc >> setAmount: anObject currency: aString [
+	amount := anObject.
+	currency := aString
 ]
 
 { #category : #arithmetic }
 Franc >> times: aMultiplier [
-	^ self class amount: amount * aMultiplier
+	^ Money franc: amount * aMultiplier
 ]
