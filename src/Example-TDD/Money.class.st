@@ -40,12 +40,17 @@ Money >> currency [
 
 { #category : #arithmetic }
 Money >> plus: aMoney [
-	^ Money amount: amount + aMoney amount currency: currency
+	^ Sum augend: self addend: aMoney
 ]
 
 { #category : #printing }
-Money >> printString [ 
-	^ amount asString , ' ', currency
+Money >> printString [
+	^ amount asString , ' ' , currency
+]
+
+{ #category : #enumerating }
+Money >> reduceTo: aCurrency [
+	^ self
 ]
 
 { #category : #private }
