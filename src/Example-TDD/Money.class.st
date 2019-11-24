@@ -49,8 +49,10 @@ Money >> printString [
 ]
 
 { #category : #enumerating }
-Money >> reduceTo: aCurrency [
-	^ self
+Money >> reduceTo: aCurrency in: aBank [
+	| rate |
+	rate := aBank exchangeRateFrom: self currency to: aCurrency.
+	^ self class amount: self amount / rate currency: aCurrency
 ]
 
 { #category : #private }
