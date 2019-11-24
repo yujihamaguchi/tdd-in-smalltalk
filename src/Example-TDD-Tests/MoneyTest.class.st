@@ -25,6 +25,17 @@ MoneyTest >> testIdentityRate [
 ]
 
 { #category : #tests }
+MoneyTest >> testMixedAddition [ 
+	| fiveBucks tenFrancs bank result |
+	fiveBucks := Money dollar: 5.
+	tenFrancs := Money franc: 10.
+	bank := Bank new.
+	bank addExchangeRateFrom: 'CHF' to: 'USD' rate: 2.
+	result := bank reduceWith: (fiveBucks plus: tenFrancs) to: 'USD'.
+	self assert: result equals: (Money dollar: 10)
+]
+
+{ #category : #tests }
 MoneyTest >> testMultiplication [
 	| five |
 	five := Money dollar: 5.

@@ -26,7 +26,8 @@ Sum >> augend [
 { #category : #enumerating }
 Sum >> reduceTo: aCurrency in: aBank [
 	| sum |
-	sum := augend amount + addend amount.
+	sum := (augend reduceTo: aCurrency in: aBank) amount
+		+ (addend reduceTo: aCurrency in: aBank) amount.
 	^ Money amount: sum currency: aCurrency
 ]
 
