@@ -8,17 +8,10 @@ Class {
 }
 
 { #category : #adding }
-Bank >> addExchangeRateFrom: aString to: anotherString rate: anInteger [
+Bank >> addRateFrom: aString to: anotherString rate: anInteger [
 	exchangeRates
 		at: (Pair from: aString to: anotherString)
 		put: anInteger
-]
-
-{ #category : #acccessing }
-Bank >> exchangeRateFrom: aString to: anotherString [
-	^ aString = anotherString
-		ifTrue: [ 1 ]
-		ifFalse: [ exchangeRates at: (Pair from: aString to: anotherString) ]
 ]
 
 { #category : #initialization }
@@ -26,7 +19,14 @@ Bank >> initialize [
 	exchangeRates := Dictionary new
 ]
 
+{ #category : #acccessing }
+Bank >> rateFrom: aString to: anotherString [
+	^ aString = anotherString
+		ifTrue: [ 1 ]
+		ifFalse: [ exchangeRates at: (Pair from: aString to: anotherString) ]
+]
+
 { #category : #enumerating }
-Bank >> reduceWith: anExpression to: aCurrency [
-	^ anExpression reduceTo: aCurrency in: self
+Bank >> reduce: anExpression to: aCurrency [
+	^ anExpression reduceTo: aCurrency at: self
 ]

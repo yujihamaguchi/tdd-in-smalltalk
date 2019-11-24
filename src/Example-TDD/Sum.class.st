@@ -23,11 +23,16 @@ Sum >> augend [
 	^ augend
 ]
 
+{ #category : #arithmetic }
+Sum >> plus: anExpression [
+	^ self class augend: self addend: anExpression
+]
+
 { #category : #enumerating }
-Sum >> reduceTo: aCurrency in: aBank [
+Sum >> reduceTo: aCurrency at: aBank [
 	| sum |
-	sum := (augend reduceTo: aCurrency in: aBank) amount
-		+ (addend reduceTo: aCurrency in: aBank) amount.
+	sum := (augend reduceTo: aCurrency at: aBank) amount
+		+ (addend reduceTo: aCurrency at: aBank) amount.
 	^ Money amount: sum currency: aCurrency
 ]
 
@@ -35,4 +40,11 @@ Sum >> reduceTo: aCurrency in: aBank [
 Sum >> setAugend: anObject addend: anotherObject [
 	augend := anObject.
 	addend := anotherObject
+]
+
+{ #category : #arithmetic }
+Sum >> times: aMultiplier [
+	^ self class
+		augend: (augend times: aMultiplier)
+		addend: (addend times: aMultiplier)
 ]

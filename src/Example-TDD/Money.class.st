@@ -39,8 +39,8 @@ Money >> currency [
 ]
 
 { #category : #arithmetic }
-Money >> plus: aMoney [
-	^ Sum augend: self addend: aMoney
+Money >> plus: anExpression [
+	^ Sum augend: self addend: anExpression
 ]
 
 { #category : #printing }
@@ -49,9 +49,9 @@ Money >> printString [
 ]
 
 { #category : #enumerating }
-Money >> reduceTo: aCurrency in: aBank [
+Money >> reduceTo: aCurrency at: aBank [
 	| rate |
-	rate := aBank exchangeRateFrom: self currency to: aCurrency.
+	rate := aBank rateFrom: self currency to: aCurrency.
 	^ self class amount: self amount / rate currency: aCurrency
 ]
 
@@ -63,5 +63,5 @@ Money >> setAmount: anObject currency: aString [
 
 { #category : #arithmetic }
 Money >> times: aMultiplier [
-	^ Money amount: amount * aMultiplier currency: currency
+	^ self class amount: amount * aMultiplier currency: currency
 ]
