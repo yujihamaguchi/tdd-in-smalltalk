@@ -29,10 +29,11 @@ Pair >> hash [
 	^ 0
 ]
 
-{ #category : #initialization }
+{ #category : #'initialization - private' }
 Pair >> setFrom: aString to: anotherString [
 	from := aString.
-	to := anotherString
+	to := anotherString.
+	^ self
 ]
 
 { #category : #accessing }

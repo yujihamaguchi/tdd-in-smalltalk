@@ -2,28 +2,29 @@ Class {
 	#name : #Bank,
 	#superclass : #Object,
 	#instVars : [
-		'exchangeRates'
+		'rates'
 	],
 	#category : #'Example-TDD'
 }
 
 { #category : #adding }
 Bank >> addRateFrom: aString to: anotherString rate: anInteger [
-	exchangeRates
+	rates
 		at: (Pair from: aString to: anotherString)
 		put: anInteger
 ]
 
 { #category : #initialization }
 Bank >> initialize [
-	exchangeRates := Dictionary new
+	rates := Dictionary new.
+	^ self
 ]
 
 { #category : #acccessing }
 Bank >> rateFrom: aString to: anotherString [
 	^ aString = anotherString
 		ifTrue: [ 1 ]
-		ifFalse: [ exchangeRates at: (Pair from: aString to: anotherString) ]
+		ifFalse: [ rates at: (Pair from: aString to: anotherString) ]
 ]
 
 { #category : #enumerating }

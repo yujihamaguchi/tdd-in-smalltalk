@@ -55,10 +55,11 @@ Money >> reduceTo: aCurrency at: aBank [
 	^ self class amount: self amount / rate currency: aCurrency
 ]
 
-{ #category : #private }
+{ #category : #'initialization - private' }
 Money >> setAmount: anObject currency: aString [
 	amount := anObject.
-	currency := aString
+	currency := aString.
+	^ self
 ]
 
 { #category : #arithmetic }

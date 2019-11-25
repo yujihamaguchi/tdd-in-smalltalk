@@ -19,9 +19,7 @@ MoneyTest >> testEquality [
 
 { #category : #tests }
 MoneyTest >> testIdentityRate [
-	| bank |
-	bank := Bank new.
-	self assert: (bank rateFrom: 'USD' to: 'USD') equals: 1
+	self assert: (Bank new rateFrom: 'USD' to: 'USD') equals: 1
 ]
 
 { #category : #tests }
@@ -90,14 +88,13 @@ MoneyTest >> testSimpleAddtion [
 
 { #category : #tests }
 MoneyTest >> testSumPlusMoney [
-	| fiveBucks tenFrancs bank result |
+	| fiveBucks tenFrancs bank sum result |
 	fiveBucks := Money dollar: 5.
 	tenFrancs := Money franc: 10.
 	bank := Bank new.
 	bank addRateFrom: 'CHF' to: 'USD' rate: 2.
-	result := bank
-		reduce: ((Sum augend: fiveBucks addend: tenFrancs) plus: fiveBucks)
-		to: 'USD'.
+	sum := Sum augend: fiveBucks addend: tenFrancs.
+	result := bank reduce: (sum plus: fiveBucks) to: 'USD'.
 	self assert: result equals: (Money dollar: 15)
 ]
 

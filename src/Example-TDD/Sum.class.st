@@ -36,10 +36,11 @@ Sum >> reduceTo: aCurrency at: aBank [
 	^ Money amount: sum currency: aCurrency
 ]
 
-{ #category : #initialization }
+{ #category : #'initialization - private' }
 Sum >> setAugend: anObject addend: anotherObject [
 	augend := anObject.
-	addend := anotherObject
+	addend := anotherObject.
+	^ self
 ]
 
 { #category : #arithmetic }
